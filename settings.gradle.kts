@@ -12,7 +12,8 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 rootProject.name = "DesignSystem_Android"
-include 'designSystem:foundation'
-include 'designSystem:component'
-include ':app'
+include("designSystem:foundation")
+include("designSystem:component")
+include(":app")
