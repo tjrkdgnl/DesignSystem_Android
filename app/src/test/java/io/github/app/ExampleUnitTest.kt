@@ -1,4 +1,4 @@
-package io.github.designsystem_android
+package io.github.app
 
 import org.junit.Test
 

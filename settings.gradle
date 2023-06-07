@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "DesignSystem_Android"
-include 'designSystem:app'
 include 'designSystem:foundation'
 include 'designSystem:component'
+include ':app'

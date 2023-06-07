@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
 android {
@@ -27,6 +28,30 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            component(MavenPublication) {
+                groupId = "io.github.anchoreer"
+                artifactId = "designSystem"
+                version = "0.0.1"
+
+                from components.release
+            }
+        }
+
+        repositories {
+            maven {
+                url = uri("https://maven.pkg.github.com/anchoreer/DesignSystem_Android")
+                credentials {
+                    username = properties.get("userName")
+                    password = properties.get("password")
+                }
+            }
+        }
     }
 }
 
